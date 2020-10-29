@@ -1,3 +1,4 @@
+//List of questions and answers
 var quizSet = [
     {
         "question": "What is my favorite number?",
@@ -17,11 +18,14 @@ var quizSet = [
             "d"
     ]
     }
-]
+] 
 
+//var 
 var timerEle = document.getElementById("timer");
+var btnNextQuestion = document.getElementById("submitBtn");
 var timeLeft = 60;
 
+//Function starts the timer and calls showLeaderboard when time runs out
 function setTime() {
     
     var timerInterval = setInterval(function() {
@@ -42,4 +46,15 @@ function showLeaderboard(){
 
     alert("Time's up!");
 }
+
+//Generates the next question when submitting an answer
+btnNextQuestion.addEventListener("click", nextQuestion)
+
+//Function gets the next question from the quizSet
+function nextQuestion(){
+
+}
+
+//Run the code
+nextQuestion();
 setTime();
