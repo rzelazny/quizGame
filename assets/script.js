@@ -20,9 +20,17 @@ var quizSet = [
     }
 ] 
 
-//var 
+//Elements that get updated
 var timerEle = document.getElementById("timer");
+var questionNum = document.getElementById("qNum");
+var questionEle = document.getElementById("quizQuestion")
+var optionOne = document.getElementById("opt1");
+var optionTwo = document.getElementById("opt2");
+var optionTHree = document.getElementById("opt3");
+var optionFour = document.getElementById("opt4");
 var btnNextQuestion = document.getElementById("submitBtn");
+
+//Set initial time
 var timeLeft = 60;
 
 //Function starts the timer and calls showLeaderboard when time runs out
