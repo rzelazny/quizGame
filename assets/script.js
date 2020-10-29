@@ -20,12 +20,12 @@ var quizSet = [
 ]
 
 var timerEle = document.getElementById("timer");
-var timeLeft = 5;
+var timeLeft = 60;
 
 function setTime() {
+    
     var timerInterval = setInterval(function() {
         timeLeft--;
-        console.log(timerEle)
         timerEle.textContent = "Time Left: " + timeLeft;
   
       if(timeLeft === 0) {
@@ -35,8 +35,6 @@ function setTime() {
   
     }, 1000);
   }
-  
-  
 
 //Displays leader board when time runs out
 function showLeaderboard(){
