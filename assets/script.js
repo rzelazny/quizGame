@@ -30,8 +30,9 @@ var optionTHree = document.getElementById("opt3");
 var optionFour = document.getElementById("opt4");
 var btnNextQuestion = document.getElementById("submitBtn");
 
-//Set initial time
+//Set initial time and quesition
 var timeLeft = 60;
+var questionNumber = 1;
 
 //Function starts the timer and calls showLeaderboard when time runs out
 function setTime() {
@@ -60,6 +61,11 @@ btnNextQuestion.addEventListener("click", nextQuestion)
 
 //Function gets the next question from the quizSet
 function nextQuestion(){
+  //set question and answers from list
+  questionNum.textContent = "Question " + questionNumber;
+  questionEle.textContent = quizSet[questionNumber].question;
+  console.log(optionOne.getElementsByTagName("label"));
+  //optionOne[0].innerHTML = quizSet[questionNumber].answer[0];
 
 }
 

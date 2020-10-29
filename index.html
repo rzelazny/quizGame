@@ -15,23 +15,27 @@
         <h1 id="timer"></h1>
         <div class="card" id="quizBody" style="width: 500px;">
             <div class="card-body">
-              <h2 class="card-title qNum">Question 1</h5>
-              <p class="card-text quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
+              <h2 class="card-title" id="qNum">Question 1</h5>
+              <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
                   itaque aperiam? Optio adipisci tempora possimus quasi!</p>
             </div>
             <div class="input-group" id="quizAnswers">
-                <div class="radio">
-                    <label><input type="radio" id="opt1">Option 1</label>
-                  </div>
-                  <div class="radio">
-                    <label><input type="radio" id="opt2">Option 2</label>
-                  </div>
-                  <div class="radio">
-                    <label><input type="radio" id="opt3">Option 3</label>
-                  </div>
-                  <div class="radio">
-                    <label><input type="radio" id="opt4">Option 4</label>
-                  </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="opt1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="opt2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="opt3" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Toggle this custom radio</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="opt4" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio4">Or toggle this other custom radio</label>
+              </div>
             </div>
             <div class="card-body" id="submitBtn">
                 <button type="button" class="btn btn-secondary">Secondary</button>
