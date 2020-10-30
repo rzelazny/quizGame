@@ -24,10 +24,10 @@ var quizSet = [
 var timerEle = document.getElementById("timer");
 var questionNum = document.getElementById("qNum");
 var questionEle = document.getElementById("quizQuestion")
-var optionOne = document.getElementById("opt1");
-var optionTwo = document.getElementById("opt2");
-var optionTHree = document.getElementById("opt3");
-var optionFour = document.getElementById("opt4");
+var optionOne = document.getElementsByClassName("choice")[0];
+var optionTwo = document.getElementsByClassName("choice")[1];
+var optionThree = document.getElementsByClassName("choice")[2];
+var optionFour = document.getElementsByClassName("choice")[3];
 var btnNextQuestion = document.getElementById("submitBtn");
 
 //Set initial time and quesition
@@ -64,7 +64,10 @@ function nextQuestion(){
   //set question and answers from list
   questionNum.textContent = "Question " + questionNumber;
   questionEle.textContent = quizSet[questionNumber].question;
-  console.log(optionOne.getElementsByTagName("label"));
+  optionOne.innerHTML = quizSet[questionNumber].answer[0];
+  optionTwo.innerHTML = quizSet[questionNumber].answer[1];
+  optionThree.innerHTML = quizSet[questionNumber].answer[2];
+  optionFour.innerHTML = quizSet[questionNumber].answer[3];
   //optionOne[0].innerHTML = quizSet[questionNumber].answer[0];
 
 }

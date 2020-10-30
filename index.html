@@ -12,33 +12,33 @@
 </head>
 <body>
     <div class="container">
-        <h1 id="timer"></h1>
+        <h1 id="timer">Time Left: </h1>
         <div class="card" id="quizBody" style="width: 500px;">
             <div class="card-body">
               <h2 class="card-title" id="qNum">Question 1</h5>
               <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
                   itaque aperiam? Optio adipisci tempora possimus quasi!</p>
             </div>
-            <div class="input-group" id="quizAnswers">
-              <div class="custom-control custom-radio">
-                <input type="radio" id="opt1" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" id="opt2" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" id="opt3" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio3">Toggle this custom radio</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input type="radio" id="opt4" name="customRadio" class="custom-control-input">
-                <label class="custom-control-label" for="customRadio4">Or toggle this other custom radio</label>
-              </div>
+              <div class="input-group" id="quizAnswers">
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="opt1" name="OptRadio" checked>
+                  <label class="custom-control-label choice" for="opt1">Default checked</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="opt2" name="OptRadio">
+                  <label class="custom-control-label choice" for="opt2">Default checked</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="opt3" name="OptRadio">
+                  <label class="custom-control-label choice" for="opt3">Default checked</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="opt4" name="OptRadio">
+                  <label class="custom-control-label choice" for="opt4">Default checked</label>
+                </div>
             </div>
             <div class="card-body" id="submitBtn">
-                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-secondary">Submit</button>
             </div>
           </div>
     </div>
