@@ -8,8 +8,9 @@ span {
     cursor: pointer;
 }
 
-.enter-score,
-.high-score {
+/* Hide scoreboard and name entry initially */
+.enter-score-container,
+.high-score-container {
     display: none;  
 }
 

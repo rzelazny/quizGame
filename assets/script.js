@@ -42,8 +42,8 @@ var optionThree = document.getElementsByClassName("choice")[2];
 var optionFour = document.getElementsByClassName("choice")[3];
 
 var quizBoard = document.getElementById("quiz-container");
-var enterScoreBoard = document.getElementById("enter-score-container");
-var scoreBoard = document.getElementById("high-score-container");
+var enterScoreBoard = document.getElementById("enter-score");
+var scoreBoard = document.getElementById("high-score");
 
 var btnNextQuestion = document.getElementById("submitBtn");
 
