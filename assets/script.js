@@ -17,7 +17,16 @@ var quizSet = [
             "c",
             "d"
     ]
-    }
+    },
+    {
+      "question": "What is my favorite color?",
+      "answer": [
+          "red",
+          "blue",
+          "cyan",
+          "purple"
+  ]
+  }
 ] 
 
 //Elements that get updated
@@ -32,7 +41,7 @@ var btnNextQuestion = document.getElementById("submitBtn");
 
 //Set initial time and quesition
 var timeLeft = 60;
-var questionNumber = 1;
+var questionNumber = 0;
 
 //Function starts the timer and calls showLeaderboard when time runs out
 function setTime() {
@@ -61,15 +70,25 @@ btnNextQuestion.addEventListener("click", nextQuestion)
 
 //Function gets the next question from the quizSet
 function nextQuestion(){
+  
+  //If there isn't another question go to the leaderboard
+  if(questionNumber === quizSet.length){
+    showLeaderboard();
+    return(0);
+  }
+
   //set question and answers from list
-  questionNum.textContent = "Question " + questionNumber;
+  questionNum.textContent = "Question " + Number(questionNumber + 1);
   questionEle.textContent = quizSet[questionNumber].question;
   optionOne.innerHTML = quizSet[questionNumber].answer[0];
   optionTwo.innerHTML = quizSet[questionNumber].answer[1];
   optionThree.innerHTML = quizSet[questionNumber].answer[2];
   optionFour.innerHTML = quizSet[questionNumber].answer[3];
-  //optionOne[0].innerHTML = quizSet[questionNumber].answer[0];
-
+  
+//Increment for next loop
+  if(questionNumber < quizSet.length){
+    questionNumber++;
+  }
 }
 
 //Run the code
