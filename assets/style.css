@@ -8,7 +8,8 @@ span {
     cursor: pointer;
 }
 
-.score {
+.enter-score,
+.high-score {
     display: none;  
 }
 

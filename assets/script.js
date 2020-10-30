@@ -40,8 +40,11 @@ var optionOne = document.getElementsByClassName("choice")[0];
 var optionTwo = document.getElementsByClassName("choice")[1];
 var optionThree = document.getElementsByClassName("choice")[2];
 var optionFour = document.getElementsByClassName("choice")[3];
-var scoreBoard = document.getElementById("score-container");
+
 var quizBoard = document.getElementById("quiz-container");
+var enterScoreBoard = document.getElementById("enter-score-container");
+var scoreBoard = document.getElementById("high-score-container");
+
 var btnNextQuestion = document.getElementById("submitBtn");
 
 //Set initial time, quesition, and score
@@ -74,29 +77,35 @@ function setTime() {
       timeLeft--;
       timerEle.textContent = "Time Left: " + timeLeft;
   
-    if(timeLeft === 0) {
+    if(timeLeft < 1 ) {
       clearInterval(timerInterval); //if not removed timer contines and goes negative
-      showLeaderboard();
+      enterScore();
     }
   
   }, 1000);
 }
 
+function enterScore(){
 
-//Displays leader board when time runs out
-function showLeaderboard(){
   timerEle.textContent = " ";
-  scoreBoard.style.display = "block";
+  enterScoreBoard.style.display = "block";
   quizBoard.style.display = "none";
-
-  //alert("Time's up!");
-
   storeScores();
 }
 
-// function close() {
-//   modalEl.style.display = "none";
-// }
+//Displays leader board when time runs out
+function showLeaderboard(){
+  enterScoreBoard.style.display = "none";
+  scoreBoard.style.display = "block";
+
+  //alert("Time's up!");
+
+  
+}
+
+function close() {
+  modalEl.style.display = "none";
+}
 
 
 //On submit button press checks answer and pulls next question
@@ -111,8 +120,8 @@ function nextQuestion(){
   
   //If there isn't another question go to the leaderboard
   if(questionNumber === quizSet.length){
-    showLeaderboard();
-    return(0);
+    timeLeft = 0;
+    return;
   }
 
   //set question and answers from list
