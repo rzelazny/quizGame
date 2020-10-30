@@ -75,6 +75,7 @@ function storeScores() {
   }
   // Stringify and set "todos" key in localStorage to todos array
   localStorage.setItem("scores", JSON.stringify(highScores));
+  showLeaderboard();
 }
 
 //Function starts the timer and calls showLeaderboard when time runs out
@@ -86,18 +87,12 @@ function setTime() {
   
     if(timeLeft < 1 ) {
       clearInterval(timerInterval); //if not removed timer contines and goes negative
-      enterScore();
+      timerEle.textContent = " ";
+    enterScoreBoard.style.display = "block";
+    quizBoard.style.display = "none";
     }
   
   }, 1000);
-}
-
-function enterScore(){
-
-  timerEle.textContent = " ";
-  enterScoreBoard.style.display = "block";
-  quizBoard.style.display = "none";
-  storeScores();
 }
 
 //Displays leader board when time runs out
@@ -127,6 +122,7 @@ btnNextQuestion.addEventListener("click", function(){
     timeLeft = timeLeft - 10;
   }
 
+  //Increment for next quesion
   questionNumber++
 
   //If there isn't another question go to the leaderboard
@@ -146,10 +142,9 @@ function nextQuestion(){
   optionTwo.innerHTML = quizSet[questionNumber].choices[1];
   optionThree.innerHTML = quizSet[questionNumber].choices[2];
   optionFour.innerHTML = quizSet[questionNumber].choices[3];
-  
 }
 
-btnSave.addEventListener("click", enterScore)
+btnSave.addEventListener("click", storeScores)
 
 //Run the code
 init();
