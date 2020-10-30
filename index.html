@@ -11,7 +11,7 @@
 <title>Quiz Show!</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="quizContainer">
         <h1 id="timer">Time Left: </h1>
         <div class="card" id="quizBody" style="width: 500px;">
             <div class="card-body">
@@ -42,6 +42,26 @@
             </div>
           </div>
     </div>
+    <div id="modal-container" class="modal">
+      <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2 id="modal-name">
+            </h2>
+          </div>
+          <div class="modal-body">
+            <h3>
+              Description:
+            </h3>
+            <textarea id="description" cols="30" rows="1"></textarea>
+            <div>
+              <button id="save">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
 <script src="assets/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

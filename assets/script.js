@@ -1,31 +1,34 @@
 //List of questions and answers
 var quizSet = [
     {
-        "question": "What is my favorite number?",
-        "answer": [
-            1,
-            2,
-            3,
-            4
-    ]
+      "question": "What is my favorite number?",
+      "answer": 2,
+      "choices": [
+          1,
+          2,
+          3,
+          4
+        ]
     },
     {
-        "question": "What is my favorite letter?",
-        "answer": [
-            "a",
-            "b",
-            "c",
-            "d"
-    ]
+      "question": "What is my favorite letter?",
+      "answer": "b",
+      "choices": [
+          "a",
+          "b",
+          "c",
+          "d"
+        ]
     },
     {
-      "question": "What is my favorite color?",
-      "answer": [
-          "red",
-          "blue",
-          "cyan",
-          "purple"
-  ]
+    "question": "What is my favorite color?",
+    "answer": "cyan",
+    "choices": [
+        "red",
+        "blue",
+        "cyan",
+        "purple"
+      ]
   }
 ] 
 
@@ -87,8 +90,12 @@ function showLeaderboard(){
     storeScores();
 }
 
-//Generates the next question when submitting an answer
-btnNextQuestion.addEventListener("click", nextQuestion)
+//On submit button press checks answer and pulls next question
+btnNextQuestion.addEventListener("click", function(){
+
+
+  nextQuestion();
+})
 
 //Function gets the next question from the quizSet
 function nextQuestion(){
@@ -102,10 +109,10 @@ function nextQuestion(){
   //set question and answers from list
   questionNum.textContent = "Question " + Number(questionNumber + 1);
   questionEle.textContent = quizSet[questionNumber].question;
-  optionOne.innerHTML = quizSet[questionNumber].answer[0];
-  optionTwo.innerHTML = quizSet[questionNumber].answer[1];
-  optionThree.innerHTML = quizSet[questionNumber].answer[2];
-  optionFour.innerHTML = quizSet[questionNumber].answer[3];
+  optionOne.innerHTML = quizSet[questionNumber].choices[0];
+  optionTwo.innerHTML = quizSet[questionNumber].choices[1];
+  optionThree.innerHTML = quizSet[questionNumber].choices[2];
+  optionFour.innerHTML = quizSet[questionNumber].choices[3];
   
 //Increment for next loop
   if(questionNumber < quizSet.length){
