@@ -45,8 +45,7 @@ var questionNumber = 0;
 var currentScore = 0;
 var highScores = [];
 
-//Check for saved scores
-init();
+
 
 function init() {
   // Get stored scores from localStorage
@@ -115,5 +114,6 @@ function nextQuestion(){
 }
 
 //Run the code
-nextQuestion();
+init();
 setTime();
+nextQuestion();
