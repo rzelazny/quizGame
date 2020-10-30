@@ -40,6 +40,8 @@ var optionOne = document.getElementsByClassName("choice")[0];
 var optionTwo = document.getElementsByClassName("choice")[1];
 var optionThree = document.getElementsByClassName("choice")[2];
 var optionFour = document.getElementsByClassName("choice")[3];
+var scoreBoard = document.getElementById("score-container");
+var quizBoard = document.getElementById("quiz-container");
 var btnNextQuestion = document.getElementById("submitBtn");
 
 //Set initial time, quesition, and score
@@ -47,8 +49,6 @@ var timeLeft = 60;
 var questionNumber = 0;
 var currentScore = 0;
 var highScores = [];
-
-
 
 function init() {
   // Get stored scores from localStorage
@@ -60,35 +60,44 @@ function init() {
     highScores = storedScores;
   }
 }
-  //Store high scores for future use
-  function storeScores() {
-    // Stringify and set "todos" key in localStorage to todos array
-    localStorage.setItem("scores", JSON.stringify(highScores));
-  }
+
+//Store high scores for future use
+function storeScores() {
+   // Stringify and set "todos" key in localStorage to todos array
+  localStorage.setItem("scores", JSON.stringify(highScores));
+}
 
 //Function starts the timer and calls showLeaderboard when time runs out
 function setTime() {
     
-    var timerInterval = setInterval(function() {
-        timeLeft--;
-        timerEle.textContent = "Time Left: " + timeLeft;
+  var timerInterval = setInterval(function() {
+      timeLeft--;
+      timerEle.textContent = "Time Left: " + timeLeft;
   
-      if(timeLeft === 0) {
-        clearInterval(timerInterval); //if not removed timer contines and goes negative
-        showLeaderboard();
-      }
+    if(timeLeft === 0) {
+      clearInterval(timerInterval); //if not removed timer contines and goes negative
+      showLeaderboard();
+    }
   
-    }, 1000);
-  }
+  }, 1000);
+}
+
 
 //Displays leader board when time runs out
 function showLeaderboard(){
-    timerEle.textContent = " ";
+  timerEle.textContent = " ";
+  scoreBoard.style.display = "block";
+  quizBoard.style.display = "none";
 
-    alert("Time's up!");
+  //alert("Time's up!");
 
-    storeScores();
+  storeScores();
 }
+
+// function close() {
+//   modalEl.style.display = "none";
+// }
+
 
 //On submit button press checks answer and pulls next question
 btnNextQuestion.addEventListener("click", function(){

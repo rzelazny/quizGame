@@ -8,19 +8,19 @@ span {
     cursor: pointer;
 }
 
-.modal {
+.score {
     display: none;  
 }
 
-.modal-header {
+.score-header {
     padding: 2px 16px;
     background-color: #586994;
     color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.score-body {padding: 2px 16px;}
 
-.modal-content {
+.score-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
