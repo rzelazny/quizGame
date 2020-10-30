@@ -45,7 +45,10 @@ var quizBoard = document.getElementById("quiz-container");
 var enterScoreBoard = document.getElementById("enter-score");
 var scoreBoard = document.getElementById("high-score");
 
+var enteredName = document.getElementById("nameEntry");
+
 var btnNextQuestion = document.getElementById("submitBtn");
+var btnSave = document.getElementById("save");
 
 //Set initial time, quesition, and score
 var timeLeft = 60;
@@ -66,7 +69,11 @@ function init() {
 
 //Store high scores for future use
 function storeScores() {
-   // Stringify and set "todos" key in localStorage to todos array
+  var highScores = {
+    name: enteredName.value.trim(),
+    score: currentScore
+  }
+  // Stringify and set "todos" key in localStorage to todos array
   localStorage.setItem("scores", JSON.stringify(highScores));
 }
 
@@ -103,9 +110,9 @@ function showLeaderboard(){
   
 }
 
-function close() {
-  modalEl.style.display = "none";
-}
+// function close() {
+//   modalEl.style.display = "none";
+// }
 
 
 //On submit button press checks answer and pulls next question
@@ -137,6 +144,8 @@ function nextQuestion(){
     questionNumber++;
   }
 }
+
+btnSave.addEventListener("click", enterScore)
 
 //Run the code
 init();
