@@ -2,7 +2,7 @@
 var quizSet = [
     {
       "question": "What is my favorite number?",
-      "answer": 2,
+      "answer": "opt1",
       "choices": [
           1,
           2,
@@ -12,7 +12,7 @@ var quizSet = [
     },
     {
       "question": "What is my favorite letter?",
-      "answer": "b",
+      "answer": "opt2",
       "choices": [
           "a",
           "b",
@@ -22,7 +22,7 @@ var quizSet = [
     },
     {
     "question": "What is my favorite color?",
-    "answer": "cyan",
+    "answer": "opt4",
     "choices": [
         "red",
         "blue",
@@ -118,19 +118,27 @@ function showLeaderboard(){
 //On submit button press checks answer and pulls next question
 btnNextQuestion.addEventListener("click", function(){
 
+  var choosenAnswer = document.querySelector('input[name="OptRadio"]:checked').getAttribute("id"); 
 
-  nextQuestion();
-})
+  if (choosenAnswer = quizSet[questionNumber].answer){
+    currentScore++;
+  }
+  else{
+    timeLeft = timeLeft - 10;
+  }
 
-//Function gets the next question from the quizSet
-function nextQuestion(){
-  
+  questionNumber++
+
   //If there isn't another question go to the leaderboard
   if(questionNumber === quizSet.length){
     timeLeft = 0;
     return;
   }
+  nextQuestion();
+});
 
+//Function gets the next question from the quizSet
+function nextQuestion(){
   //set question and answers from list
   questionNum.textContent = "Question " + Number(questionNumber + 1);
   questionEle.textContent = quizSet[questionNumber].question;
@@ -139,10 +147,6 @@ function nextQuestion(){
   optionThree.innerHTML = quizSet[questionNumber].choices[2];
   optionFour.innerHTML = quizSet[questionNumber].choices[3];
   
-//Increment for next loop
-  if(questionNumber < quizSet.length){
-    questionNumber++;
-  }
 }
 
 btnSave.addEventListener("click", enterScore)
