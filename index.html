@@ -13,6 +13,7 @@
 <body>
     <section class="container" id="quiz-container">
         <h1 id="timer">Time Left: </h1>
+        <h2 id="score">Score: </h2>
         <div class="card" id="quizBody" style="width: 500px;">
             <div class="card-body">
               <h2 class="card-title" id="qNum">Question 1</h5>
@@ -49,11 +50,25 @@
             <h2 id="score-name">
             </h2>
           </div>
+          <!-- Row 1 -->
           <div class="score-body">
-            <h3>
-              Enter your name:
-            </h3>
-            <textarea id="description" cols="30" rows="1"></textarea>
+            <div class="row">
+              <div class="col-sm-6">
+                <h3>Enter your name</h3>
+              </div>
+              <div class="col-sm-6">
+                <h3>Your score</h3>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="row">
+              <div class="col-sm-6">
+                <textarea id="description" cols="30" rows="1"></textarea>
+              </div>
+              <div class="col-sm-6">
+                <h3>9999</h3>
+              </div>
+            </div>
             <div>
               <button id="save">Save</button>
             </div>
