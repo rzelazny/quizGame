@@ -34,6 +34,7 @@ var quizSet = [
 
 //HTML Elements that get referenced
 var timerEle = document.getElementById("timer");
+var scoreEle = document.getElementById("score");
 var questionNum = document.getElementById("qNum");
 var questionEle = document.getElementById("quizQuestion")
 var optionOne = document.getElementsByClassName("choice")[0];
@@ -101,7 +102,6 @@ function storeScores() {
       highScores.push(newScore);
     }
   }
-    
     //delete lowest score if a 6th score has been added
     if(highScores.length === 6){
       highScores.splice(5, 1);
@@ -156,6 +156,7 @@ btnNextQuestion.addEventListener("click", function(){
 
   if (choosenAnswer === quizSet[questionNumber].answer){
     currentScore++;
+    scoreEle.textContent = "Score: " + currentScore;
   }
   else{
     timeLeft = timeLeft - 10;
@@ -187,5 +188,5 @@ btnSave.addEventListener("click", storeScores)
 
 //Run the code
 init();
-setTime();
+//setTime();
 nextQuestion();
