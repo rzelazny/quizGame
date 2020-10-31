@@ -45,6 +45,7 @@ var optionFour = document.getElementsByClassName("choice")[3];
 var quizBoard = document.getElementById("quiz-container");
 var enterScoreBoard = document.getElementById("enter-score");
 var scoreBoard = document.getElementById("high-score");
+var pastNames = document.getElementById("pastNames");
 var pastScores = document.getElementById("pastScores");
 
 var enteredName = document.getElementById("nameEntry");
@@ -139,14 +140,14 @@ function showLeaderboard(){
   for (var i = 0; i < highScores.length; i++) {
     var name = highScores[i].name;
 
-    var li = document.createElement("li");
+    var li = document.createElement("ol");
     li.textContent = name;
 
-    var score = document.createElement("p");
+    var score = document.createElement("ol");
     score.textContent = highScores[i].score;
 
-    li.appendChild(score);
-    pastScores.appendChild(li);
+    pastNames.appendChild(li);
+    pastScores.appendChild(score);
   }
 }
 
