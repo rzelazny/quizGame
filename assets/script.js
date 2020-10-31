@@ -1,33 +1,103 @@
 //List of questions and answers
 var quizSet = [
     {
-      "question": "What is my favorite number?",
+      "question": "How many pounds of candy corn are produced each year?",
       "answer": "opt1",
       "choices": [
-          1,
-          2,
-          3,
-          4
+          "35 milion pounds",
+          "100 million pounds",
+          "250 million pounds",
+          "35 billion pounds"
         ]
     },
     {
-      "question": "What is my favorite letter?",
+      "question": "What famous magician died on Halloween?",
       "answer": "opt2",
       "choices": [
-          "a",
-          "b",
-          "c",
-          "d"
+          "Apollo Robbins",
+          "Harry Houdini",
+          "David Copperfield",
+          "Penn Jillette"
         ]
     },
     {
-    "question": "What is my favorite color?",
+    "question": "When is Halloween thought to originate?",
     "answer": "opt4",
     "choices": [
-        "red",
-        "blue",
-        "cyan",
-        "purple"
+        "1898 AD",
+        "1650 AD",
+        "500 BC",
+        "4000 BC"
+      ]
+  },
+  {
+    "question": "Before pumpkins were used, what veggie was commonly carved into Jack-o-Lanterns?",
+    "answer": "opt3",
+    "choices": [
+        "Watermelons",
+        "Carrots",
+        "Turnips",
+        "Canned Peas"
+      ]
+  },
+  {
+    "question": "What was The Munsters’ address?",
+    "answer": "opt1",
+    "choices": [
+        "1313 Mockingbird Lane",
+        "221B Baker Street",
+        "1800 Scare Lane",
+        "It was never shown"
+      ]
+  },
+  {
+    "question": "In Bram Stoker's novel, was was Dracula's original name?",
+    "answer": "opt1",
+    "choices": [
+        "Count Wampyr",
+        "Count Chocula",
+        "Lord Belfry",
+        "Frank N. Stein"
+      ]
+  },
+  {
+    "question": "In which country did Halloween originate?",
+    "answer": "opt2",
+    "choices": [
+        "China",
+        "Ireland",
+        "France",
+        "Romania"
+      ]
+  },
+  {
+    "question": "What is the fear of Halloween called?",
+    "answer": "opt2",
+    "choices": [
+        "Triskaidekaphobia",
+        "Samhainophobia",
+        "Acrophobia",
+        "Halloweenieness"
+      ]
+  },
+  {
+    "question": "What item is banned 12am October 31st to 12pm November 1st in Hollywood California?",
+    "answer": "opt3",
+    "choices": [
+        "Toilet paper",
+        "Fake blood",
+        "Silly String",
+        "Masks of Ronald Regan"
+      ]
+  },
+  {
+    "question": "Which candy is the best?",
+    "answer": "opt4",
+    "choices": [
+        "Candy corn",
+        "Skittles",
+        "Whoppers",
+        "Snickers"
       ]
   }
 ] 
