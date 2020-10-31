@@ -72,14 +72,41 @@ function init() {
 
 //Store high scores for future use
 function storeScores() {
-    var newScore = {
-      name: enteredName.value.trim(),
-      score: currentScore
+  var newScore = {
+    name: enteredName.value.trim(),
+    score: currentScore
+  }
+  //Adding to the array size and looping based on an updating array size is an infinite loop
+  var curScoreCount = highScores.length; 
+  var scoreAdded = false;
+
+  //The first person is always a high score  
+  if(curScoreCount === 0){
+    highScores.push(newScore);
+  }
+  else{
+    
+    for(var i = 0; i < curScoreCount; i++){
+      //Add current score above the first score it beats
+      if(highScores[i].score < newScore.score){
+        if(scoreAdded === false){
+          highScores.splice(i, 0, newScore);
+          //Only add it once, even if it beats multiple existing scores
+          scoreAdded = true;
+        }
+      }
+    }
+    //If it doesn't beat a current score but there are less than 5 scores add it to the end
+    if (curScoreCount < 5 && scoreAdded === false){
+      highScores.push(newScore);
+    }
+  }
+    
+    //delete lowest score if a 6th score has been added
+    if(highScores.length === 6){
+      highScores.splice(5, 1);
     }
 
-    //see if new score is a high score
-    highScores.splice(0, 0, newScore);
-    
   // Stringify and set "scores" key in localStorage to scores array
   localStorage.setItem("scores", JSON.stringify(highScores));
   showLeaderboard();
@@ -107,8 +134,6 @@ function setTime() {
 function showLeaderboard(){
   enterScoreBoard.style.display = "none";
   scoreBoard.style.display = "block";
-
-  console.log(highScores.length);
 
   for (var i = 0; i < highScores.length; i++) {
     var name = highScores[i].name;
