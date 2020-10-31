@@ -76,7 +76,9 @@ function storeScores() {
       name: enteredName.value.trim(),
       score: currentScore
     }
-    highScores.push(newScore);
+
+    //see if new score is a high score
+    highScores.splice(0, 0, newScore);
     
   // Stringify and set "scores" key in localStorage to scores array
   localStorage.setItem("scores", JSON.stringify(highScores));
