@@ -1,49 +1,31 @@
 *{
     padding: 2px;
 }
+
+/* Hide scoreboard and name entry initially */
+.enter-score-container,
+.high-score-container {
+    display: none;  
+}
+
 .container{
     background-color: darkorange;
 }
 
-.card-header{
+.topBar{
     background-color: orangered;
     text-align: center;
 }
-.card-body{
+.content-body{
     background-color: wheat;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
+.buttonArea{
+    margin-left: 45%;
+    margin-bottom: 10px;
+}
+
 #quizQuestion{
     font-weight: bold;
     padding: 10px;
 }
-
-/* Hide scoreboard and name entry initially */
-/* .enter-score-container,
-.high-score-container {
-    display: none;  
-} */
-
-/* span {
-    cursor: pointer;
-}
-
-
-
-.score-header {
-    padding: 2px 16px;
-    background-color: #586994;
-    color: white;
-}
-
-.score-body {padding: 2px 16px;}
-
-.score-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-} */
