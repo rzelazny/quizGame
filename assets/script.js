@@ -44,6 +44,7 @@ var optionFour = document.getElementsByClassName("choice")[3];
 var quizBoard = document.getElementById("quiz-container");
 var enterScoreBoard = document.getElementById("enter-score");
 var scoreBoard = document.getElementById("high-score");
+var pastScores = document.getElementById("pastScores");
 
 var enteredName = document.getElementById("nameEntry");
 
@@ -54,6 +55,7 @@ var btnSave = document.getElementById("save");
 var timeLeft = 60;
 var questionNumber = 0;
 var currentScore = 0;
+
 var highScores = [];
 
 function init() {
@@ -61,7 +63,7 @@ function init() {
   // Parsing the JSON string to an object
   var storedScores = JSON.parse(localStorage.getItem("scores"));
 
-  // If todos were retrieved from localStorage, update the todos array to it
+  // If todos were retrieved from localStorage, update the score array to it
   if (storedScores !== null) {
     highScores = storedScores;
   }
@@ -69,16 +71,23 @@ function init() {
 
 //Store high scores for future use
 function storeScores() {
-  var highScores = {
-    name: enteredName.value.trim(),
-    score: currentScore
-  }
+    var newScore = {
+      name: enteredName.value.trim(),
+      score: currentScore
+    }
+    console.log(highScores);
+    console.log(newScore);
+
+    highScores.push(newScore);
+    console.log(highScores);
   // Stringify and set "todos" key in localStorage to todos array
-  localStorage.setItem("scores", JSON.stringify(highScores));
+  localStorage.setItem("scores", JSON.stringify(highScore));
+  console.log(highScores);
+
   showLeaderboard();
 }
 
-//Function starts the timer and calls showLeaderboard when time runs out
+//Function starts the timer and shows name entry once time runs out
 function setTime() {
     
   var timerInterval = setInterval(function() {
@@ -88,8 +97,8 @@ function setTime() {
     if(timeLeft < 1 ) {
       clearInterval(timerInterval); //if not removed timer contines and goes negative
       timerEle.textContent = " ";
-    enterScoreBoard.style.display = "block";
-    quizBoard.style.display = "none";
+      enterScoreBoard.style.display = "block";
+      quizBoard.style.display = "none";
     }
   
   }, 1000);
@@ -100,11 +109,21 @@ function showLeaderboard(){
   enterScoreBoard.style.display = "none";
   scoreBoard.style.display = "block";
 
-  //alert("Time's up!");
+  console.log(highScores.length);
 
-  
+  for (var i = 0; i < highScores.length; i++) {
+    var name = highScores[i].name;
+
+    var li = document.createElement("li");
+    li.textContent = name;
+
+    var score = document.createElement("p");
+    score.textContent = highScores[i].score;
+
+    li.appendChild(score);
+    pastScores.appendChild(li);
+  }
 }
-
 // function close() {
 //   modalEl.style.display = "none";
 // }
