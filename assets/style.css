@@ -1,18 +1,34 @@
-.quizBody{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+*{
+    padding: 2px;
+}
+.container{
+    background-color: darkorange;
 }
 
-span {
-    cursor: pointer;
+.card-header{
+    background-color: orangered;
+    text-align: center;
+}
+.card-body{
+    background-color: wheat;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#quizQuestion{
+    font-weight: bold;
+    padding: 10px;
 }
 
 /* Hide scoreboard and name entry initially */
-.enter-score-container,
+/* .enter-score-container,
 .high-score-container {
     display: none;  
+} */
+
+/* span {
+    cursor: pointer;
 }
+
+
 
 .score-header {
     padding: 2px 16px;
@@ -30,4 +46,4 @@ span {
     border: 1px solid #888;
     width: 80%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
+} */

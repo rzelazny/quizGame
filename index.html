@@ -11,38 +11,50 @@
 <title>Quiz Show!</title>
 </head>
 <body>
-    <section class="container" id="quiz-container">
-        <h1 id="timer">Time Left: </h1>
-        <h2 id="score">Score: </h2>
-        <div class="card" id="quizBody" style="width: 500px;">
-            <div class="card-body">
-              <h2 class="card-title" id="qNum">Question 1</h5>
-              <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
-                  itaque aperiam? Optio adipisci tempora possimus quasi!</p>
+  <div class="container">
+    <header id="quiz-container">
+      <div class="row">
+        <div class="col-sm-9">
+          <h2 id="timer">Time Left: </h2>
+        </div>
+        <div class="col-sm-3">
+          <h2 id="score">Score: 0</h2>
+        </div>
+      </div>
+    </header>
+    <main id="quizBody">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="card-title" id="qNum">Question 1</h2>
+        </div>
+        <div class="card-body">
+          <div class="question">
+            <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
+                itaque aperiam? Optio adipisci tempora possimus quasi!</p>
+          </div>
+          <div class="input-group" id="quizAnswers">
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="opt1" name="OptRadio" checked>
+              <label class="custom-control-label choice" for="opt1">First choice</label>
             </div>
-              <div class="input-group" id="quizAnswers">
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="opt1" name="OptRadio" checked>
-                  <label class="custom-control-label choice" for="opt1">Default checked</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="opt2" name="OptRadio">
-                  <label class="custom-control-label choice" for="opt2">Default checked</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="opt3" name="OptRadio">
-                  <label class="custom-control-label choice" for="opt3">Default checked</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id="opt4" name="OptRadio">
-                  <label class="custom-control-label choice" for="opt4">Default checked</label>
-                </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="opt2" name="OptRadio">
+              <label class="custom-control-label choice" for="opt2">Second choice</label>
             </div>
-            <div class="card-body" id="submitBtn">
-                <button type="button" class="btn btn-secondary">Submit</button>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="opt3" name="OptRadio">
+              <label class="custom-control-label choice" for="opt3">Third choice</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="opt4" name="OptRadio">
+              <label class="custom-control-label choice" for="opt4">Fourth choice</label>
             </div>
           </div>
-        </section>
+          <button type="button" class="btn btn-secondary" id="submitBtn">Submit</button>
+        </div>
+      </div>
+    </main>
+
     <section class="enter-score-container" id="enter-score">
       <div class="score-content">
           <div class="score-header">
@@ -91,6 +103,7 @@
       </div>
     </section>
 
+  </div>
 <script src="assets/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
