@@ -47,6 +47,7 @@ var scoreBoard = document.getElementById("high-score");
 var pastScores = document.getElementById("pastScores");
 
 var enteredName = document.getElementById("nameEntry");
+var enteredScore = document.getElementById("yourScore");
 
 var btnNextQuestion = document.getElementById("submitBtn");
 var btnSave = document.getElementById("save");
@@ -75,15 +76,10 @@ function storeScores() {
       name: enteredName.value.trim(),
       score: currentScore
     }
-    console.log(highScores);
-    console.log(newScore);
-
     highScores.push(newScore);
-    console.log(highScores);
-  // Stringify and set "todos" key in localStorage to todos array
+    
+  // Stringify and set "scores" key in localStorage to scores array
   localStorage.setItem("scores", JSON.stringify(highScores));
-  console.log(highScores);
-
   showLeaderboard();
 }
 
@@ -99,6 +95,7 @@ function setTime() {
       timerEle.textContent = " ";
       enterScoreBoard.style.display = "block";
       quizBoard.style.display = "none";
+      enteredScore.textContent = currentScore;
     }
   
   }, 1000);
@@ -124,23 +121,19 @@ function showLeaderboard(){
     pastScores.appendChild(li);
   }
 }
-// function close() {
-//   modalEl.style.display = "none";
-// }
-
 
 //On submit button press checks answer and pulls next question
 btnNextQuestion.addEventListener("click", function(){
 
   var choosenAnswer = document.querySelector('input[name="OptRadio"]:checked').getAttribute("id"); 
 
-  if (choosenAnswer = quizSet[questionNumber].answer){
+  if (choosenAnswer === quizSet[questionNumber].answer){
     currentScore++;
   }
   else{
     timeLeft = timeLeft - 10;
   }
-
+  
   //Increment for next quesion
   questionNumber++
 
