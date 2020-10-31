@@ -81,7 +81,7 @@ function storeScores() {
     highScores.push(newScore);
     console.log(highScores);
   // Stringify and set "todos" key in localStorage to todos array
-  localStorage.setItem("scores", JSON.stringify(highScore));
+  localStorage.setItem("scores", JSON.stringify(highScores));
   console.log(highScores);
 
   showLeaderboard();
