@@ -51,7 +51,8 @@ var enteredName = document.getElementById("nameEntry");
 var enteredScore = document.getElementById("yourScore");
 
 var btnNextQuestion = document.getElementById("submitBtn");
-var btnSave = document.getElementById("save");
+var btnSave = document.getElementById("saveBtn");
+var btnReload =document.getElementById("reloadBtn");
 
 //Set initial time, quesition, and score
 var timeLeft = 60;
@@ -186,7 +187,11 @@ function nextQuestion(){
 
 btnSave.addEventListener("click", storeScores)
 
+btnReload.addEventListener("click", function(){
+  location.reload();
+})
+
 //Run the code
 init();
-//setTime();
+setTime();
 nextQuestion();

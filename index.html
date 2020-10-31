@@ -12,61 +12,62 @@
 </head>
 <body>
   <div class="container">
-    <header id="quiz-container">
-      <div class="row">
-        <div class="col-sm-9">
-          <h2 id="timer">Time Left: </h2>
-        </div>
-        <div class="col-sm-3">
-          <h2 id="score">Score: 0</h2>
-        </div>
-      </div>
-    </header>
-    <main id="quizBody">
-      <div class="card">
-        <div class="card-header">
-          <h2 class="card-title" id="qNum">Question 1</h2>
-        </div>
-        <div class="card-body">
-          <div class="question">
-            <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
-                itaque aperiam? Optio adipisci tempora possimus quasi!</p>
+    <section id="quiz-container">
+      <header>
+        <div class="row">
+          <div class="col-sm-9">
+            <h2 id="timer">Time Left: </h2>
           </div>
-          <div class="input-group" id="quizAnswers">
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="opt1" name="OptRadio" checked>
-              <label class="custom-control-label choice" for="opt1">First choice</label>
+          <div class="col-sm-3">
+            <h2 id="score">Score: 0</h2>
+          </div>
+        </div>
+      </header>
+      <main id="quizBody">
+        <div class="card">
+          <header class="topBar">
+            <h2 class="card-title" id="qNum">Question 1</h2>
+          </header>
+          <div class="content-body">
+            <div class="question">
+              <p class="card-text" id="quizQuestion">The question is going to go here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic, cupiditate labore inventore assumenda alias voluptatum rem repudiandae. Vitae voluptates magnam suscipit ea, 
+                  itaque aperiam? Optio adipisci tempora possimus quasi!</p>
             </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="opt2" name="OptRadio">
-              <label class="custom-control-label choice" for="opt2">Second choice</label>
+            <div class="input-group" id="quizAnswers">
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="opt1" name="OptRadio" checked>
+                <label class="custom-control-label choice" for="opt1">First choice</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="opt2" name="OptRadio">
+                <label class="custom-control-label choice" for="opt2">Second choice</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="opt3" name="OptRadio">
+                <label class="custom-control-label choice" for="opt3">Third choice</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="opt4" name="OptRadio">
+                <label class="custom-control-label choice" for="opt4">Fourth choice</label>
+              </div>
             </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="opt3" name="OptRadio">
-              <label class="custom-control-label choice" for="opt3">Third choice</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" class="custom-control-input" id="opt4" name="OptRadio">
-              <label class="custom-control-label choice" for="opt4">Fourth choice</label>
+            <div class="buttonArea">
+              <button type="button" class="btn btn-secondary" id="submitBtn">Submit</button>
             </div>
           </div>
-          <button type="button" class="btn btn-secondary" id="submitBtn">Submit</button>
         </div>
-      </div>
-    </main>
-
+      </main>
+    </section>
     <section class="enter-score-container" id="enter-score">
-      <div class="score-content">
-          <div class="score-header">
-            <span class="close">&times;</span>
-            <h2 id="score-name">
-            </h2>
-          </div>
+      <header class="topBar">
+            <h1>Well done!</h1>
+      </header>
+      <main>
           <!-- Row 1 -->
-          <div class="score-body">
+          <div class="content-body">
             <div class="row">
               <div class="col-sm-6">
-                <h2>Enter your name</h2>
+                <h2>Enter your name:</h2>
               </div>
               <div class="col-sm-6">
                 <h2>Your score</h2>
@@ -75,34 +76,40 @@
             <!-- Row 2 -->
             <div class="row">
               <div class="col-sm-6">
-                <textarea id="nameEntry" cols="30" rows="1"></textarea>
+                <div class="form-group">
+                  <input class="form-control" id="nameEntry" placeholder="Your Name">
+                </div>
               </div>
               <div class="col-sm-6">
                 <h3 id="yourScore">9999</h3>
               </div>
             </div>
-            <div>
-              <button id="save">Save</button>
+            <div class="buttonArea">
+              <button type="button" class="btn btn-secondary" id="saveBtn">Submit</button>
             </div>
           </div>
-        </div>
-      </div>
+        </main>
     </section>
     <section class="high-score-container" id="high-score">
-      <div class="score-content">
-          <div class="score-header">
-            <span class="close">&times;</span>
-            <h2 id="score-name">
-            </h2>
+      <header class="topBar">
+        <h1>Top 5 Scores</h1>
+      </header>
+      <main>
+        <div class="content-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <h2 id="score-name">
+            </div>
+            <div class="col-sm-6">
+              <h2 id="pastScores"></h2>
+            </div>
           </div>
-          <div class="score-body">
-            <h2>Top 5 Scores:</h3>
-            <h3 id="pastScores"></h2>
+          <div class="buttonArea">
+            <button type="button" class="btn btn-secondary" id="reloadBtn">Play Again?</button>
           </div>
         </div>
-      </div>
+      </main>
     </section>
-
   </div>
 <script src="assets/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
