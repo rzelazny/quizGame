@@ -132,8 +132,8 @@ var currentScore = 0;
 
 var highScores = [];
 
+// Get stored scores from localStorage
 function init() {
-  // Get stored scores from localStorage
   // Parsing the JSON string to an object
   var storedScores = JSON.parse(localStorage.getItem("scores"));
 
@@ -184,6 +184,20 @@ function storeScores() {
   showLeaderboard();
 }
 
+//Function shifts between showing the quiz board, name entry and leaderboard as needed
+function toggleDisplay (show){
+  if (show === "nameEntry"){
+    quizBoard.style.display = "none";
+    enterScoreBoard.style.display = "block";
+    scoreBoard.style.display = "none";
+  }
+  else if (show === "leaderboard"){
+    quizBoard.style.display = "none";
+    enterScoreBoard.style.display = "none";
+    scoreBoard.style.display = "block";
+  }
+}
+
 //Function starts the timer and shows name entry once time runs out
 function setTime() {
     
@@ -194,19 +208,18 @@ function setTime() {
     if(timeLeft < 1 ) {
       clearInterval(timerInterval); //if not removed timer contines and goes negative
       timerEle.textContent = " ";
-      enterScoreBoard.style.display = "block";
-      quizBoard.style.display = "none";
       enteredScore.textContent = currentScore;
+      toggleDisplay("nameEntry");
     }
   
   }, 1000);
 }
 
-//Displays leader board when time runs out
+//Displays leader board after name entry
 function showLeaderboard(){
-  enterScoreBoard.style.display = "none";
-  scoreBoard.style.display = "block";
+  toggleDisplay("leaderboard");
 
+  //Create list elements to show past names and scores
   for (var i = 0; i < highScores.length; i++) {
     var name = highScores[i].name;
 
@@ -221,7 +234,7 @@ function showLeaderboard(){
   }
 }
 
-//On submit button press checks answer and pulls next question
+//On submit button press checks answer and call nextQuestion
 btnNextQuestion.addEventListener("click", function(){
 
   var choosenAnswer = document.querySelector('input[name="OptRadio"]:checked').getAttribute("id"); 
