@@ -149,6 +149,11 @@ function storeScores() {
     name: enteredName.value.trim(),
     score: currentScore
   }
+  //No blank names allowed
+  if(newScore.name === ""){
+    newScore.name = "anonymous";
+  }
+
   //Adding to the array size and looping based on an updating array size is an infinite loop
   var curScoreCount = highScores.length; 
   var scoreAdded = false;
@@ -181,6 +186,8 @@ function storeScores() {
 
   // Stringify and set "scores" key in localStorage to scores array
   localStorage.setItem("scores", JSON.stringify(highScores));
+
+  //After the new score is recorded show the leaderboard
   showLeaderboard();
 }
 
@@ -223,14 +230,14 @@ function showLeaderboard(){
   for (var i = 0; i < highScores.length; i++) {
     var name = highScores[i].name;
 
-    var li = document.createElement("ol");
-    li.textContent = name;
+    var nameList = document.createElement("ol");
+    nameList.textContent = name;
 
-    var score = document.createElement("ol");
-    score.textContent = highScores[i].score;
+    var scoreList = document.createElement("ol");
+    scoreList.textContent = highScores[i].score;
 
-    pastNames.appendChild(li);
-    pastScores.appendChild(score);
+    pastNames.appendChild(nameList);
+    pastScores.appendChild(scoreList);
   }
 }
 
