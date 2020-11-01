@@ -274,10 +274,6 @@ function nextQuestion(){
   optionTwo.innerHTML = quizSet[questionNumber].choices[1];
   optionThree.innerHTML = quizSet[questionNumber].choices[2];
   optionFour.innerHTML = quizSet[questionNumber].choices[3];
-
-  //Default selection is option one
-  console.log(document.getElementById("opt1"));
-  //document.getElementById("opt1").setAttribute("checked",true)
 }
 
 btnSave.addEventListener("click", storeScores)
