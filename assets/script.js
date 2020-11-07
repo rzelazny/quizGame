@@ -123,21 +123,24 @@ var enteredScore = document.getElementById("yourScore");
 
 var btnNextQuestion = document.getElementById("submitBtn");
 var btnSave = document.getElementById("saveBtn");
-var btnReload =document.getElementById("reloadBtn");
+var btnReload = document.getElementById("reloadBtn");
 
-//Set initial time, quesition, and score
-var timeLeft = 60;
-var questionNumber = 0;
-var currentScore = 0;
-
+//Create initial time, quesition, and scores
+var timeLeft;
+var questionNumber;
+var currentScore;
 var highScores = [];
 
-// Get stored scores from localStorage
+// Get stored scores from localStorage and set initial values
 function init() {
+  timeLeft = 60;
+  questionNumber = 0;
+  currentScore = 0;
+
   // Parsing the JSON string to an object
   var storedScores = JSON.parse(localStorage.getItem("scores"));
 
-  // If todos were retrieved from localStorage, update the score array to it
+  // If scores were retrieved from localStorage, update the score array to it
   if (storedScores !== null) {
     highScores = storedScores;
   }
